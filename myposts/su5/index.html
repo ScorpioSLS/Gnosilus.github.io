@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://yoursite.com/gallery/su5/7.jpg">
 <meta property="og:image" content="http://yoursite.com/gallery/su5/8.jpg">
 <meta property="og:image" content="http://yoursite.com/gallery/su5/9.jpg">
-<meta property="og:updated_time" content="2018-12-02T17:12:08.772Z">
+<meta property="og:updated_time" content="2018-12-02T17:30:46.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="零基础Hexo+Github建站">
 <meta name="twitter:description" content="下面详细说说本教程需必备/所需条件！！！    必备条件 详情      手机系统 Android系统    Github帐号 没有的可以去注册一个    Termux 终端模拟器">
@@ -139,7 +139,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-02T17:12:08.822Z">2018-12-02</time>
+                <time class="level-item has-text-grey" datetime="2018-12-02T17:30:46.298Z">2018-12-02</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Liunx/">Liunx</a>
@@ -149,7 +149,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 762 个字)
+                    7 分钟 读完 (大约 1053 个字)
                 </span>
                 
             </div>
@@ -189,11 +189,16 @@
 <p> 当然也可以自定义，这里是教程，所以推荐写成这样，方便后面教程操作！填写完成后点击“创建储存库”完成创建，如下图：<br> <img src="/gallery/su5/7.jpg" alt=""><br> 好了，这个步骤完成了！！！<br> <strong> 3、安装Termux最新版本 </strong><br> 点击<a href="/app/Termux_0.65.apk">链接</a>直接下载，然后安装即可<br> <strong> 4、操作Termux安装Hexo </strong><br> 1.打开“Termux”，等等下载文件自动安装(可能第一次打开需要梯子！)<br> 2.输入以下命令安装，请一条一条复制粘贴，然后按回车键安装(如果提示y or n，输入y然后回车键确认)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pkg install coreuts</span><br><span class="line">pkg install git</span><br><span class="line">pkg install nodejs-lts</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure></p>
 <p> 输入以上命令就完成Hexo安装了<br> <strong> 5、部署到github </strong><br> 1.创建数据目录<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure></p>
 <p> 2.cd到数据目录<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure></p>
-<p> 3.设置git数据<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">git config --global user.name &quot;你的github用户名&quot;</span><br><span class="line">git config --global user.email &quot;注册github的邮箱&quot;</span><br></pre></td></tr></table></figure></p>
+<p> 3.设置git数据<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:你的github用户名/你的github用户名.github.io.git</span><br><span class="line">hexo init</span><br><span class="line">git config --global user.name &quot;你的github用户名&quot;</span><br><span class="line">git config --global user.email &quot;注册github的邮箱&quot;</span><br></pre></td></tr></table></figure></p>
 <p> 4.安装ssh服务<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install openssh</span><br></pre></td></tr></table></figure></p>
 <p> 5.生成ssh密钥(如果出现提示，一直按回车键，貌似是4次)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;注册github的邮箱&quot;</span><br></pre></td></tr></table></figure></p>
 <p> 6.读取生成ssh密钥<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
-<p> 将读取出来的ssh全部复制到你的”github-ssh设置”中，读取的ssh如下图：<br> <img src="/gallery/su5/8.jpg" alt=""><br> 7.浏览器登陆你的github，打开设置-ssh，点击“new ssh key”添加你复制生成的ssh，如下图：<br> <img src="/gallery/su5/9.jpg" alt=""></p>
+<p> 将读取出来的ssh全部复制到你的”github-ssh设置”中，读取的ssh如下图：<br> <img src="/gallery/su5/8.jpg" alt=""><br> 7.浏览器登陆你的github，打开设置-ssh，点击“new ssh key”添加你复制生成的ssh，如下图：<br> <img src="/gallery/su5/9.jpg" alt=""><br> 8.编辑“_config.yml”配置文件,进入”Termux”，右滑界面，打开菜单，长按“KEYBOARD”打开底部快捷栏<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install nano</span><br><span class="line">nona _config.yml</span><br></pre></td></tr></table></figure></p>
+<p> 打开”_config.yml”文件后，按底部快捷键”↓”移动光标到底部！修改“deploy”为下面样子：<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> type: git</span><br><span class="line"> repo: git@github.com:你的github用户名/你的github用户名.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure></p>
+<p> 然后点击底部快捷栏“CTRL”(变深色)，然后输入“o”保存，再按回车键保存<br> 点击底部快捷栏“CTRL”，按“x”退出编辑<br> <strong> 6、安装部署服务 </strong><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p> 部署到github(第一次可能要输入：yes确认，每次更新可用)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p> <strong> 操作以上全部步骤即可访问你的博客了 </strong><br> 浏览器输入以下网站打开你的博客<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://你的用户名.github.io/你的用户名.github.io/</span><br></pre></td></tr></table></figure></p>
+<p> 以后我再写自定义博客主题等教程了，教程结束</p>
 
         </div>
         
@@ -450,7 +455,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-02T17:12:08.822Z">2018-12-02</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-02T17:30:46.298Z">2018-12-02</time></div>
                     <a href="/myposts/su5/" class="has-link-black-ter is-size-6">零基础Hexo+Github建站</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Liunx/">Liunx</a>
@@ -648,7 +653,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-02T17:12:08.822Z">2018-12-02</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-02T17:30:46.298Z">2018-12-02</time></div>
                     <a href="/myposts/su5/" class="has-link-black-ter is-size-6">零基础Hexo+Github建站</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Liunx/">Liunx</a>
