@@ -243,18 +243,20 @@
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
-<div id="valine-thread"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: false,
-        verify: false,
-        app_id: 'NpiTSRAXN4mfToXgjhRHFVrv-gzGzoHsz',
-        app_key: '2wXecMRolLIIfH1NhY6pKmGK',
-        placeholder: '留下你的评论吧'
-    });
+	var gitment = new Gitment({
+		id: 'myposts/su1/',
+		owner: 'ScorpioSLS',
+		repo: 'Gnosilus.github.io',
+		oauth: {
+			client_id: '2244db16a50438a0b0a7',
+			client_secret: '1e23279cb5f4adb3a005fc8b371ab72ce64f1447',
+		},
+	})
+	gitment.render('comment-container')
 </script>
 
     </div>
