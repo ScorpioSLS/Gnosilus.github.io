@@ -202,48 +202,7 @@
 </div>
 
 
-<p><strong> 声明：转载需贴上本帖链接 </strong></p>
-<p><strong> 修复昨日步骤错误无法正确建站，卸载软件重新安装重新按照以下步骤来即可 </strong></p>
-<p>下面详细说说本教程需必备/所需条件！！！</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">条件</th>
-<th style="text-align:right">详情</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"> 手机系统</td>
-<td style="text-align:right">Android系统</td>
-</tr>
-<tr>
-<td style="text-align:left"> Github帐号</td>
-<td style="text-align:right">没有的可以去注册一个</td>
-</tr>
-<tr>
-<td style="text-align:left"> Termux</td>
-<td style="text-align:right">终端模拟器</td>
-</tr>
-</tbody>
-</table>
- <a id="more"></a>
-<p> <strong> 1、注册github帐号 </strong><br> 点击跳转<a href="https://github.com" target="_blank" rel="noopener">github官网</a>,推荐用电脑版网页打开(推荐使用：<a href="https://www.coolapk.com/apk/com.android.chrome" target="_blank" rel="noopener">谷歌浏览器</a>，自带网页翻译)<br> 按提示注册帐号(第一项用户名、第二项邮箱、第三项帐号密码)，原网页界面是英文，考虑到大多数人看不懂，所以我使用了翻译后的网页截图<br> <img src="/gallery/su5/1.jpg" alt=""><br> 填写所有信息点击“Sign up for GitHub”进入注册向导！如果填写用户名没有被占用且邮箱没有注册过，会显示以下界面<br> <img src="/gallery/su5/2.jpg" alt=""><br> 如果报错！按提示重写新的用户名/邮箱，直到无错误！<br> 点击“创建一个帐户”进入下一步，显示如下：<br> <img src="/gallery/su5/3.jpg" alt=""><br> 点击“继续”进入下一步，显示如下：<br> <img src="/gallery/su5/4.jpg" alt=""><br> 点击“跳过此步骤”完成注册！显示如下：<br> <img src="/gallery/su5/5.jpg" alt=""><br> <strong> 2、创建一个储存库，用于部署网页 </strong><br> 继续上面的步骤，点击“开始一个项目”创建，如图：<br> <img src="/gallery/su5/6.jpg" alt=""><br> 然后填写你的储存库名称：<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你的用户名.github.io</span><br></pre></td></tr></table></figure></p>
-<p> 当然也可以自定义，这里是教程，所以推荐写成这样，方便后面教程操作！填写完成后点击“创建储存库”完成创建，如下图：<br> <img src="/gallery/su5/7.jpg" alt=""><br> 好了，这个步骤完成了！！！<br> <strong> 3、安装Termux最新版本 </strong><br> 点击<a href="/app/Termux_0.65.apk">链接</a>直接下载，然后安装即可<br> <strong> 4、操作Termux安装Hexo </strong><br> 1.打开“Termux”，等等下载文件自动安装(可能第一次打开需要梯子！)<br> 2.输入以下命令安装，请一条一条复制粘贴，然后按回车键安装(如果提示y or n，输入y然后回车键确认)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pkg install git</span><br><span class="line">pkg install nodejs-lts</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure></p>
-<p> 输入以上命令就完成Hexo安装了<br> <strong> 5、部署到github </strong><br> 1.创建数据目录<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure></p>
-<p> 2.cd到数据目录<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure></p>
-<p> 3.设置git数据<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">git config --global user.name &quot;你的github用户名&quot;</span><br><span class="line">git config --global user.email &quot;注册github的邮箱&quot;</span><br><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:你的github用户名/你的github用户名.github.io.git</span><br></pre></td></tr></table></figure></p>
-<p> 4.安装ssh服务<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install openssh</span><br></pre></td></tr></table></figure></p>
-<p> 5.生成ssh密钥(如果出现提示，一直按回车键，貌似是4次)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;注册github的邮箱&quot;</span><br></pre></td></tr></table></figure></p>
-<p> 6.读取生成ssh密钥<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
-<p> 将读取出来的ssh全部复制到你的”github-ssh设置”中，读取的ssh如下图：<br> <img src="/gallery/su5/8.jpg" alt=""><br> 7.浏览器登陆你的github，打开设置-ssh，点击“new ssh key”添加你复制生成的ssh，如下图：<br> <img src="/gallery/su5/9.jpg" alt=""><br> 8.编辑“_config.yml”配置文件,进入”Termux”，右滑界面，打开菜单，长按“KEYBOARD”打开底部快捷栏<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install nano</span><br><span class="line">nano _config.yml</span><br></pre></td></tr></table></figure></p>
-<p> 打开”_config.yml”文件后(请注意切换成英文输入法)，按底部快捷键”↓”移动光标到底部！修改“deploy”为下面样子：<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> type: git</span><br><span class="line"> repo: git@github.com:你的github用户名/你的github用户名.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure></p>
-<p> 然后点击底部快捷栏“CTRL”(变深色)，然后输入“o”保存，再按回车键保存<br> 点击底部快捷栏“CTRL”，按“x”退出编辑<br> <strong> 6、安装部署服务 </strong><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p> 部署到github(每次更新可用)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy  (第一次部署提示输入：yes确认)</span><br></pre></td></tr></table></figure></p>
-<p> <strong> 操作以上全部步骤即可访问你的博客了 </strong><br> 浏览器输入以下网站打开你的博客<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://你的用户名.github.io/</span><br></pre></td></tr></table></figure></p>
-<p> <strong> 部署完成后可能需要1到3分钟才可以访问网站(需刷新) </strong><br> 以后我再写自定义博客主题等教程了，教程结束</p>
-           
-            
+
 
 
 </div>
