@@ -7,13 +7,13 @@
 
 
 
-    <meta name="description" content="声明：转载需贴上本帖链接  下面详细说说本教程需必备/所需条件！！！    条件 详情      手机系统 Android系统    Github帐号 没有的可以去注册一个    Termux 终端模拟器">
+    <meta name="description" content="声明：转载需贴上本帖链接   修复昨日步骤错误无法正确建站，卸载软件重新安装重新按照以下步骤来即可  下面详细说说本教程需必备/所需条件！！！    条件 详情      手机系统 Android系统    Github帐号 没有的可以去注册一个    Termux 终端模拟器">
 <meta name="keywords" content="教程,博客,liunx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="零基础Hexo+Github搭建博客">
 <meta property="og:url" content="http://yoursite.com/myposts/su5/index.html">
 <meta property="og:site_name" content="博客 By 苏lisong">
-<meta property="og:description" content="声明：转载需贴上本帖链接  下面详细说说本教程需必备/所需条件！！！    条件 详情      手机系统 Android系统    Github帐号 没有的可以去注册一个    Termux 终端模拟器">
+<meta property="og:description" content="声明：转载需贴上本帖链接   修复昨日步骤错误无法正确建站，卸载软件重新安装重新按照以下步骤来即可  下面详细说说本教程需必备/所需条件！！！    条件 详情      手机系统 Android系统    Github帐号 没有的可以去注册一个    Termux 终端模拟器">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/gallery/su5/1.jpg">
 <meta property="og:image" content="http://yoursite.com/gallery/su5/2.jpg">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="http://yoursite.com/gallery/su5/7.jpg">
 <meta property="og:image" content="http://yoursite.com/gallery/su5/8.jpg">
 <meta property="og:image" content="http://yoursite.com/gallery/su5/9.jpg">
-<meta property="og:updated_time" content="2018-12-03T17:32:20.121Z">
+<meta property="og:updated_time" content="2018-12-03T17:54:12.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="零基础Hexo+Github搭建博客">
-<meta name="twitter:description" content="声明：转载需贴上本帖链接  下面详细说说本教程需必备/所需条件！！！    条件 详情      手机系统 Android系统    Github帐号 没有的可以去注册一个    Termux 终端模拟器">
+<meta name="twitter:description" content="声明：转载需贴上本帖链接   修复昨日步骤错误无法正确建站，卸载软件重新安装重新按照以下步骤来即可  下面详细说说本教程需必备/所需条件！！！    条件 详情      手机系统 Android系统    Github帐号 没有的可以去注册一个    Termux 终端模拟器">
 <meta name="twitter:image" content="http://yoursite.com/gallery/su5/1.jpg">
 
 
@@ -139,7 +139,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-03T17:32:20.161Z">2018-12-03</time>
+                <time class="level-item has-text-grey" datetime="2018-12-03T17:54:12.173Z">2018-12-03</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/liunx/">liunx</a>
@@ -149,7 +149,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 分钟 读完 (大约 1072 个字)
+                    7 分钟 读完 (大约 1121 个字)
                 </span>
                 
             </div>
@@ -162,6 +162,7 @@
         </h1>
         <div class="content">
             <p><strong> 声明：转载需贴上本帖链接 </strong></p>
+<p><strong> 修复昨日步骤错误无法正确建站，卸载软件重新安装重新按照以下步骤来即可 </strong></p>
 <p>下面详细说说本教程需必备/所需条件！！！</p>
 <table>
 <thead>
@@ -197,9 +198,9 @@
 <p> 将读取出来的ssh全部复制到你的”github-ssh设置”中，读取的ssh如下图：<br> <img src="/gallery/su5/8.jpg" alt=""><br> 7.浏览器登陆你的github，打开设置-ssh，点击“new ssh key”添加你复制生成的ssh，如下图：<br> <img src="/gallery/su5/9.jpg" alt=""><br> 8.编辑“_config.yml”配置文件,进入”Termux”，右滑界面，打开菜单，长按“KEYBOARD”打开底部快捷栏<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install nano</span><br><span class="line">nano _config.yml</span><br></pre></td></tr></table></figure></p>
 <p> 打开”_config.yml”文件后(请注意切换成英文输入法)，按底部快捷键”↓”移动光标到底部！修改“deploy”为下面样子：<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> type: git</span><br><span class="line"> repo: git@github.com:你的github用户名/你的github用户名.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure></p>
 <p> 然后点击底部快捷栏“CTRL”(变深色)，然后输入“o”保存，再按回车键保存<br> 点击底部快捷栏“CTRL”，按“x”退出编辑<br> <strong> 6、安装部署服务 </strong><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p> 部署到github(第一次可能要输入：yes确认，每次更新可用)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p> <strong> 操作以上全部步骤即可访问你的博客了 </strong><br> 浏览器输入以下网站打开你的博客<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://你的用户名.github.io/你的用户名.github.io/</span><br></pre></td></tr></table></figure></p>
-<p> 以后我再写自定义博客主题等教程了，教程结束</p>
+<p> 部署到github(每次更新可用)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy  (第一次部署提示输入：yes确认)</span><br></pre></td></tr></table></figure></p>
+<p> <strong> 操作以上全部步骤即可访问你的博客了 </strong><br> 浏览器输入以下网站打开你的博客<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://你的用户名.github.io/</span><br></pre></td></tr></table></figure></p>
+<p> <strong> 部署完成后可能需要1到3分钟才可以访问网站(需刷新) </strong><br> 以后我再写自定义博客主题等教程了，教程结束</p>
 
         </div>
         
@@ -464,7 +465,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T17:32:20.161Z">2018-12-03</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T17:54:12.173Z">2018-12-03</time></div>
                     <a href="/myposts/su5/" class="has-link-black-ter is-size-6">零基础Hexo+Github搭建博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/liunx/">liunx</a>
@@ -706,7 +707,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T17:32:20.161Z">2018-12-03</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T17:54:12.173Z">2018-12-03</time></div>
                     <a href="/myposts/su5/" class="has-link-black-ter is-size-6">零基础Hexo+Github搭建博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/liunx/">liunx</a>
