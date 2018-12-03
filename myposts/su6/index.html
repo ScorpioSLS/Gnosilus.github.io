@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="博客 By 苏lisong">
 <meta property="og:description" content="分享一下自己用lua开发用的一些源码(来源网络/开发手册)我自己使用的开发工具是AndroidLuaj(支持lua+java)   1、调用打开支付宝付款  12345678910 --url为支付宝收款码读取出来的网址 function zfb(url) --判断是否安装支付宝  if pcall(function() activity.getPackageManager().getPackag">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-03T04:58:03.596Z">
+<meta property="og:updated_time" content="2018-12-03T05:08:11.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidLua - 笔记">
 <meta name="twitter:description" content="分享一下自己用lua开发用的一些源码(来源网络/开发手册)我自己使用的开发工具是AndroidLuaj(支持lua+java)   1、调用打开支付宝付款  12345678910 --url为支付宝收款码读取出来的网址 function zfb(url) --判断是否安装支付宝  if pcall(function() activity.getPackageManager().getPackag">
@@ -129,7 +129,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-03T04:58:03.646Z">2018-12-02</time>
+                <time class="level-item has-text-grey" datetime="2018-12-03T05:08:11.146Z">2018-12-03</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/AndroidLua/">AndroidLua</a>
@@ -139,7 +139,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 128 个字)
+                    1 分钟 读完 (大约 224 个字)
                 </span>
                 
             </div>
@@ -154,7 +154,8 @@
             <p>分享一下自己用lua开发用的一些源码(来源网络/开发手册)<br>我自己使用的开发工具是AndroidLuaj(支持lua+java)</p>
 <p> <strong> 1、调用打开支付宝付款 </strong><br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> --url为支付宝收款码读取出来的网址</span><br><span class="line"> function zfb(url)</span><br><span class="line"> --判断是否安装支付宝</span><br><span class="line">  if pcall(function() activity.getPackageManager().getPackageInfo(&quot;com.eg.android.AlipayGphone&quot;,0) end) then</span><br><span class="line">    print(&quot;正在跳转支付宝&quot;)</span><br><span class="line">    activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(&quot;alipays://platformapi/startapp?saId=10000007&amp;clientVersion=3.7.0.0718&amp;qrcode=url&quot;)))</span><br><span class="line">  else</span><br><span class="line">    print(&quot;检测到没安装支付宝&quot;)</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
  <a id="more"></a>
- <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<p> <strong> 2、获取屏幕真实高度+状态栏高度 </strong><br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> function 屏幕真实高度()</span><br><span class="line">  import &quot;android.content.Context&quot;</span><br><span class="line">  import &quot;android.os.Build&quot;</span><br><span class="line">  import &quot;android.graphics.Point&quot;</span><br><span class="line"></span><br><span class="line">  local windowManager = activity.getApplication().getSystemService(Context.WINDOW_SERVICE);</span><br><span class="line">  local display = windowManager.getDefaultDisplay();</span><br><span class="line">  local outPoint = Point();</span><br><span class="line">  if Build.VERSION.SDK_INT &gt;= 19 then</span><br><span class="line">    display.getRealSize(outPoint);</span><br><span class="line">  else</span><br><span class="line">    display.getSize(outPoint);</span><br><span class="line">  end</span><br><span class="line">  屏幕高 = outPoint.y;</span><br><span class="line">  屏幕宽 = outPoint.x;</span><br><span class="line">  </span><br><span class="line">  --获取状态栏高度</span><br><span class="line">  resourceId = activity.getResources().getIdentifier(&quot;status_bar_height&quot;, &quot;dimen&quot;, &quot;android&quot;);</span><br><span class="line">  状态栏 = activity.getResources().getDimensionPixelSize(resourceId);</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -418,7 +419,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T04:58:03.646Z">2018-12-02</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T05:08:11.146Z">2018-12-03</time></div>
                     <a href="/myposts/su6/" class="has-link-black-ter is-size-6">AndroidLua - 笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/AndroidLua/">AndroidLua</a>
@@ -660,7 +661,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T04:58:03.646Z">2018-12-02</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T05:08:11.146Z">2018-12-03</time></div>
                     <a href="/myposts/su6/" class="has-link-black-ter is-size-6">AndroidLua - 笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/AndroidLua/">AndroidLua</a>
