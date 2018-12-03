@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://yoursite.com/gallery/su5/7.jpg">
 <meta property="og:image" content="http://yoursite.com/gallery/su5/8.jpg">
 <meta property="og:image" content="http://yoursite.com/gallery/su5/9.jpg">
-<meta property="og:updated_time" content="2018-12-03T03:53:08.438Z">
+<meta property="og:updated_time" content="2018-12-03T12:34:54.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="零基础Hexo+Github搭建博客">
 <meta name="twitter:description" content="声明：转载需贴上本帖链接  下面详细说说本教程需必备/所需条件！！！    条件 详情      手机系统 Android系统    Github帐号 没有的可以去注册一个    Termux 终端模拟器">
@@ -139,7 +139,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-03T03:53:08.478Z">2018-12-02</time>
+                <time class="level-item has-text-grey" datetime="2018-12-03T12:34:54.791Z">2018-12-03</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/liunx/">liunx</a>
@@ -194,7 +194,7 @@
 <p> 4.安装ssh服务<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install openssh</span><br></pre></td></tr></table></figure></p>
 <p> 5.生成ssh密钥(如果出现提示，一直按回车键，貌似是4次)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;注册github的邮箱&quot;</span><br></pre></td></tr></table></figure></p>
 <p> 6.读取生成ssh密钥<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
-<p> 将读取出来的ssh全部复制到你的”github-ssh设置”中，读取的ssh如下图：<br> <img src="/gallery/su5/8.jpg" alt=""><br> 7.浏览器登陆你的github，打开设置-ssh，点击“new ssh key”添加你复制生成的ssh，如下图：<br> <img src="/gallery/su5/9.jpg" alt=""><br> 8.编辑“_config.yml”配置文件,进入”Termux”，右滑界面，打开菜单，长按“KEYBOARD”打开底部快捷栏<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install nano</span><br><span class="line">nona _config.yml</span><br></pre></td></tr></table></figure></p>
+<p> 将读取出来的ssh全部复制到你的”github-ssh设置”中，读取的ssh如下图：<br> <img src="/gallery/su5/8.jpg" alt=""><br> 7.浏览器登陆你的github，打开设置-ssh，点击“new ssh key”添加你复制生成的ssh，如下图：<br> <img src="/gallery/su5/9.jpg" alt=""><br> 8.编辑“_config.yml”配置文件,进入”Termux”，右滑界面，打开菜单，长按“KEYBOARD”打开底部快捷栏<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install nano</span><br><span class="line">nano _config.yml</span><br></pre></td></tr></table></figure></p>
 <p> 打开”_config.yml”文件后(请注意切换成英文输入法)，按底部快捷键”↓”移动光标到底部！修改“deploy”为下面样子：<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> type: git</span><br><span class="line"> repo: git@github.com:你的github用户名/你的github用户名.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure></p>
 <p> 然后点击底部快捷栏“CTRL”(变深色)，然后输入“o”保存，再按回车键保存<br> 点击底部快捷栏“CTRL”，按“x”退出编辑<br> <strong> 6、安装部署服务 </strong><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p> 部署到github(第一次可能要输入：yes确认，每次更新可用)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
@@ -225,17 +225,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/myposts/su6/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">AndroidLua - 笔记</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/myposts/su2/">
-                <span class="level-item">带壳截图Pro</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/myposts/su6/">
+                <span class="level-item">AndroidLua - 笔记</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -463,25 +456,6 @@
         
         <article class="media">
             
-            <a href="/myposts/su6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/su6.jpg" alt="AndroidLua - 笔记">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T05:14:36.336Z">2018-12-03</time></div>
-                    <a href="/myposts/su6/" class="has-link-black-ter is-size-6">AndroidLua - 笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/AndroidLua/">AndroidLua</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/myposts/su5/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/su5.jpg" alt="零基础Hexo+Github搭建博客">
@@ -490,10 +464,29 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T03:53:08.478Z">2018-12-02</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T12:34:54.791Z">2018-12-03</time></div>
                     <a href="/myposts/su5/" class="has-link-black-ter is-size-6">零基础Hexo+Github搭建博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/liunx/">liunx</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/myposts/su6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/su6.jpg" alt="AndroidLua - 笔记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T05:22:04.666Z">2018-12-03</time></div>
+                    <a href="/myposts/su6/" class="has-link-black-ter is-size-6">AndroidLua - 笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/AndroidLua/">AndroidLua</a>
                     </p>
                 </div>
             </div>
@@ -705,25 +698,6 @@
         
         <article class="media">
             
-            <a href="/myposts/su6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/su6.jpg" alt="AndroidLua - 笔记">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T05:14:36.336Z">2018-12-03</time></div>
-                    <a href="/myposts/su6/" class="has-link-black-ter is-size-6">AndroidLua - 笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/AndroidLua/">AndroidLua</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/myposts/su5/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/su5.jpg" alt="零基础Hexo+Github搭建博客">
@@ -732,10 +706,29 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T03:53:08.478Z">2018-12-02</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T12:34:54.791Z">2018-12-03</time></div>
                     <a href="/myposts/su5/" class="has-link-black-ter is-size-6">零基础Hexo+Github搭建博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/liunx/">liunx</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/myposts/su6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/su6.jpg" alt="AndroidLua - 笔记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T05:22:04.666Z">2018-12-03</time></div>
+                    <a href="/myposts/su6/" class="has-link-black-ter is-size-6">AndroidLua - 笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/AndroidLua/">AndroidLua</a>
                     </p>
                 </div>
             </div>
