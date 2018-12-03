@@ -185,6 +185,48 @@
                 </div>
             </div>
         </div>
+        <p><strong> 声明：转载需贴上本帖链接 </strong></p>
+<p><strong> 修复昨日步骤错误无法正确建站，卸载软件重新安装重新按照以下步骤来即可 </strong></p>
+<p>下面详细说说本教程需必备/所需条件！！！</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">条件</th>
+<th style="text-align:right">详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"> 手机系统</td>
+<td style="text-align:right">Android系统</td>
+</tr>
+<tr>
+<td style="text-align:left"> Github帐号</td>
+<td style="text-align:right">没有的可以去注册一个</td>
+</tr>
+<tr>
+<td style="text-align:left"> Termux</td>
+<td style="text-align:right">终端模拟器</td>
+</tr>
+</tbody>
+</table>
+ <a id="more"></a>
+<p> <strong> 1、注册github帐号 </strong><br> 点击跳转<a href="https://github.com" target="_blank" rel="noopener">github官网</a>,推荐用电脑版网页打开(推荐使用：<a href="https://www.coolapk.com/apk/com.android.chrome" target="_blank" rel="noopener">谷歌浏览器</a>，自带网页翻译)<br> 按提示注册帐号(第一项用户名、第二项邮箱、第三项帐号密码)，原网页界面是英文，考虑到大多数人看不懂，所以我使用了翻译后的网页截图<br> <img src="/gallery/su5/1.jpg" alt=""><br> 填写所有信息点击“Sign up for GitHub”进入注册向导！如果填写用户名没有被占用且邮箱没有注册过，会显示以下界面<br> <img src="/gallery/su5/2.jpg" alt=""><br> 如果报错！按提示重写新的用户名/邮箱，直到无错误！<br> 点击“创建一个帐户”进入下一步，显示如下：<br> <img src="/gallery/su5/3.jpg" alt=""><br> 点击“继续”进入下一步，显示如下：<br> <img src="/gallery/su5/4.jpg" alt=""><br> 点击“跳过此步骤”完成注册！显示如下：<br> <img src="/gallery/su5/5.jpg" alt=""><br> <strong> 2、创建一个储存库，用于部署网页 </strong><br> 继续上面的步骤，点击“开始一个项目”创建，如图：<br> <img src="/gallery/su5/6.jpg" alt=""><br> 然后填写你的储存库名称：<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你的用户名.github.io</span><br></pre></td></tr></table></figure></p>
+<p> 当然也可以自定义，这里是教程，所以推荐写成这样，方便后面教程操作！填写完成后点击“创建储存库”完成创建，如下图：<br> <img src="/gallery/su5/7.jpg" alt=""><br> 好了，这个步骤完成了！！！<br> <strong> 3、安装Termux最新版本 </strong><br> 点击<a href="/app/Termux_0.65.apk">链接</a>直接下载，然后安装即可<br> <strong> 4、操作Termux安装Hexo </strong><br> 1.打开“Termux”，等等下载文件自动安装(可能第一次打开需要梯子！)<br> 2.输入以下命令安装，请一条一条复制粘贴，然后按回车键安装(如果提示y or n，输入y然后回车键确认)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pkg install git</span><br><span class="line">pkg install nodejs-lts</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure></p>
+<p> 输入以上命令就完成Hexo安装了<br> <strong> 5、部署到github </strong><br> 1.创建数据目录<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure></p>
+<p> 2.cd到数据目录<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure></p>
+<p> 3.设置git数据<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">git config --global user.name &quot;你的github用户名&quot;</span><br><span class="line">git config --global user.email &quot;注册github的邮箱&quot;</span><br><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:你的github用户名/你的github用户名.github.io.git</span><br></pre></td></tr></table></figure></p>
+<p> 4.安装ssh服务<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install openssh</span><br></pre></td></tr></table></figure></p>
+<p> 5.生成ssh密钥(如果出现提示，一直按回车键，貌似是4次)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;注册github的邮箱&quot;</span><br></pre></td></tr></table></figure></p>
+<p> 6.读取生成ssh密钥<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p> 将读取出来的ssh全部复制到你的”github-ssh设置”中，读取的ssh如下图：<br> <img src="/gallery/su5/8.jpg" alt=""><br> 7.浏览器登陆你的github，打开设置-ssh，点击“new ssh key”添加你复制生成的ssh，如下图：<br> <img src="/gallery/su5/9.jpg" alt=""><br> 8.编辑“_config.yml”配置文件,进入”Termux”，右滑界面，打开菜单，长按“KEYBOARD”打开底部快捷栏<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install nano</span><br><span class="line">nano _config.yml</span><br></pre></td></tr></table></figure></p>
+<p> 打开”_config.yml”文件后(请注意切换成英文输入法)，按底部快捷键”↓”移动光标到底部！修改“deploy”为下面样子：<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> type: git</span><br><span class="line"> repo: git@github.com:你的github用户名/你的github用户名.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure></p>
+<p> 然后点击底部快捷栏“CTRL”(变深色)，然后输入“o”保存，再按回车键保存<br> 点击底部快捷栏“CTRL”，按“x”退出编辑<br> <strong> 6、安装部署服务 </strong><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p> 部署到github(每次更新可用)<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy  (第一次部署提示输入：yes确认)</span><br></pre></td></tr></table></figure></p>
+<p> <strong> 操作以上全部步骤即可访问你的博客了 </strong><br> 浏览器输入以下网站打开你的博客<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://你的用户名.github.io/</span><br></pre></td></tr></table></figure></p>
+<p> <strong> 部署完成后可能需要1到3分钟才可以访问网站(需刷新) </strong><br> 以后我再写自定义博客主题等教程了，教程结束</p>
+           
+            
         
         
     </div>
@@ -240,6 +282,14 @@
                 </div>
             </div>
         </div>
+        <p>分享一下自己用lua开发用的一些源码(来源网络/开发手册/java转化)，如有侵权请及时联系我<br>我自己使用的开发工具是AndroidLuaj(支持lua+java)</p>
+<p> <strong> 1、调用打开支付宝付款 </strong><br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> --url为支付宝收款码读取出来的网址</span><br><span class="line"> function zfb(url)</span><br><span class="line"> --判断是否安装支付宝</span><br><span class="line">  if pcall(function() activity.getPackageManager().getPackageInfo(&quot;com.eg.android.AlipayGphone&quot;,0) end) then</span><br><span class="line">    print(&quot;正在跳转支付宝&quot;)</span><br><span class="line">    activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(&quot;alipays://platformapi/startapp?saId=10000007&amp;clientVersion=3.7.0.0718&amp;qrcode=url&quot;)))</span><br><span class="line">  else</span><br><span class="line">    print(&quot;检测到没安装支付宝&quot;)</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+ <a id="more"></a>
+<p> <strong> 2、获取屏幕真实高度+状态栏高度 </strong><br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> function 屏幕真实高度()</span><br><span class="line">  import &quot;android.content.Context&quot;</span><br><span class="line">  import &quot;android.os.Build&quot;</span><br><span class="line">  import &quot;android.graphics.Point&quot;</span><br><span class="line"></span><br><span class="line">  local windowManager = activity.getApplication().getSystemService(Context.WINDOW_SERVICE);</span><br><span class="line">  local display = windowManager.getDefaultDisplay();</span><br><span class="line">  local outPoint = Point();</span><br><span class="line">  if Build.VERSION.SDK_INT &gt;= 19 then</span><br><span class="line">    display.getRealSize(outPoint);</span><br><span class="line">  else</span><br><span class="line">    display.getSize(outPoint);</span><br><span class="line">  end</span><br><span class="line">  屏幕高 = outPoint.y;</span><br><span class="line">  屏幕宽 = outPoint.x;</span><br><span class="line">  </span><br><span class="line">  --获取状态栏高度</span><br><span class="line">  resourceId = activity.getResources().getIdentifier(&quot;status_bar_height&quot;, &quot;dimen&quot;, &quot;android&quot;);</span><br><span class="line">  状态栏 = activity.getResources().getDimensionPixelSize(resourceId);</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p> <strong> 3、MD弹窗提示(Pretent提供) </strong><br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> function MD提示(str,a,b,c,d)</span><br><span class="line">  if time then toasttime=Toast.LENGTH_SHORT else toasttime= Toast.LENGTH_SHORT end</span><br><span class="line">  toasts=&#123;</span><br><span class="line">    CardView;</span><br><span class="line">    id=&quot;toastb&quot;,</span><br><span class="line">    CardElevation=c;</span><br><span class="line">    radius=d;</span><br><span class="line">    background=a;</span><br><span class="line">    &#123;</span><br><span class="line">      TextView;</span><br><span class="line">      layout_margin=&quot;7dp&quot;;</span><br><span class="line">      textSize=&quot;13sp&quot;;</span><br><span class="line">      TextColor=b,</span><br><span class="line">      layout_gravity=&quot;center&quot;;</span><br><span class="line">      text=&quot;Hello Ori&quot;;</span><br><span class="line">      id=&quot;mess&quot;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">  message=tostring(str)</span><br><span class="line">  local toast=Toast.makeText(activity,&quot;内容&quot;,toasttime);</span><br><span class="line">  toast.setView(loadlayout(toasts))</span><br><span class="line">  mess.Text=message</span><br><span class="line">  toast.show()</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p> <strong> 4、打开QQ/QQ群 </strong><br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> function QQ聊天窗(号码)</span><br><span class="line">  activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(&quot;mqqwpa://im/chat?chat_type=wpa&amp;uin=&quot;..QQh)))</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+           
+            
         
         
     </div>
@@ -325,6 +375,55 @@
                 </div>
             </div>
         </div>
+        <p>一款简单将截图套壳软件分享、美观且方便！截图分享，可能是每个人都有的，而我想给大家推荐一款可以将你的截图个性化的软件！</p>
+<p> <strong> 软件详情 </strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 开发者</td>
+<td>苏lisong (本人)</td>
+</tr>
+<tr>
+<td> 应用系统</td>
+<td>安卓 </td>
+</tr>
+<tr>
+<td> 适配版本</td>
+<td>5.0+</td>
+</tr>
+<tr>
+<td> 应用大小</td>
+<td>1M+</td>
+</tr>
+<tr>
+<td> 下载链接</td>
+<td><a href="/app/dkjt.apk">点击下载</a></td>
+</tr>
+</tbody>
+</table>
+ <a id="more"></a>
+<p> <strong> 软件预览 </strong></p>
+<p> 软件界面如下：</p>
+<p> <img src="/gallery/su2/1.jpg" alt="使用引导"><br> <img src="/gallery/su2/2.jpg" alt="软件主页"></p>
+<p> <strong> 使用效果图 </strong></p>
+<p> 使用软件套壳后效果图如下：</p>
+<p> <img src="/gallery/su2/3.jpg" alt=""><br> <img src="/gallery/su2/4.jpg" alt=""><br> <img src="/gallery/su2/5.jpg" alt=""></p>
+<p> <strong> 注意事项 </strong></p>
+<ol>
+<li>第一次启动软件，需允许全部权限，否则可能会运行出错！</li>
+<li>切换机型模块功能在主页左下角！第一次打开列表需下载模块，推荐全部下载：模块包1+模块包2！(更新模块只需要下载模块包2)</li>
+<li><p>部分机型第一次使用，保存图片后图库中无显示！解决方法：重启一次手机即可，以后不需要重启了！</p>
+<p><strong> 使用技巧 </strong><br>1.</p>
+</li>
+</ol>
+           
+            
         
         
     </div>
@@ -381,6 +480,16 @@
                 </div>
             </div>
         </div>
+        <p>关于：这个皮肤是我在2017年修改自酷安@MortRex 在2017发布的一款皮肤，具体是哪一款我自己都找不到了，嘿嘿！</p>
+<p><strong> 特点 </strong><br>1.颜色单调突出，不花俏，个人觉得很美观<br>2.超方便的快捷键</p>
+<p><strong> 图片预览 </strong><br> <a id="more"></a><br> <img src="/gallery/su4/1.jpg" alt="26键布局"><br> <img src="/gallery/su4/2.jpg" alt="9键布局"><br><strong> 下载链接 </strong></p>
+<p>下载方法1：<br>百度云盘：<a href="https://pan.baidu.com/s/1OBH_imz4hXUXPDAXNW-XSQ" target="_blank" rel="noopener">点击跳转</a> 提取码:02b1</p>
+<p>下载方法2：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">链接:https://pan.baidu.com/s/1OBH_imz4hXUXPDAXNW-XSQ 提取码:02b1 复制这段内容后打开百度网盘手机App，操作更方便哦</span><br></pre></td></tr></table></figure></p>
+<p><strong> 应用主题方法(可能不同系统应用方法不一样) </strong><br>前提：需安装百度输入法</p>
+<p>方法1：到文件管理器找到下载好的皮肤，单击打开，然后选择“百度输入法”打开即可</p>
+<p>方法2：把下载的皮肤文件(.bds)放入手机中对应文件夹”Android/baidu/ime/skins”,点击输入法面板上熊头logo打开菜单，进入超级皮肤，选择本地，在皮肤页中选择启用皮肤布局即可！</p>
+           
+            
         
         
     </div>
@@ -435,6 +544,10 @@
                 </div>
             </div>
         </div>
+        <p>以下图片来源：酷安@等风听雨眠 分享<br> <a id="more"></a></p>
+<div class="justified-gallery"><br><img src="/gallery/su3/1.jpg" alt="1"><br><img src="/gallery/su3/2.jpg" alt="2"><br><img src="/gallery/su3/3.jpg" alt="3"><br><img src="/gallery/su3/4.jpg" alt="4"><br><img src="/gallery/su3/5.jpg" alt="5"><br><img src="/gallery/su3/6.jpg" alt="6"><br><img src="/gallery/su3/7.jpg" alt="7"><br><img src="/gallery/su3/8.jpg" alt="8"><br><img src="/gallery/su3/9.jpg" alt="9"><br></div>
+           
+            
         
         
     </div>
@@ -523,6 +636,72 @@
                 </div>
             </div>
         </div>
+        <p>欢迎来到本站一览，持续更新手机+电脑玩机知识！</p>
+<table>
+<thead>
+<tr>
+<th>作者信息</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 昵称</td>
+<td>苏lisong</td>
+</tr>
+<tr>
+<td> QQ</td>
+<td>1183148426</td>
+</tr>
+<tr>
+<td> 邮箱</td>
+<td><a href="mailto:1183148426@qq.com" target="_blank" rel="noopener">1183148426@qq.com</a></td>
+</tr>
+<tr>
+<td> 职业</td>
+<td>业余开发者</td>
+</tr>
+<tr>
+<td> 相关</td>
+<td>略懂java、lua</td>
+</tr>
+<tr>
+<td> <a href="http://www.coolapk.com/u/491255" target="_blank" rel="noopener">酷安</a>ID</td>
+<td>小家伙su</td>
+</tr>
+<tr>
+<td> <a href="http://www.oneplusbbs.com/?1761160" target="_blank" rel="noopener">一加社区</a>ID</td>
+<td>苏lisong</td>
+</tr>
+</tbody>
+</table>
+  <a id="more"></a>
+<table>
+<thead>
+<tr>
+<th>开发应用</th>
+<th style="text-align:right">简介</th>
+<th style="text-align:center">下载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>带壳截图Pro</td>
+<td style="text-align:right">简单将截图套壳</td>
+<td style="text-align:center"><a href="https://www.coolapk.com/apk/sulisong.ShelledPro.Screenshots" target="_blank" rel="noopener">点击跳转</a></td>
+</tr>
+<tr>
+<td>氢OS主题</td>
+<td style="text-align:right">氢OS专用主题(不支持9.0)</td>
+<td style="text-align:center"><a href="https://www.coolapk.com/apk/sulisong.theme.h2os" target="_blank" rel="noopener">点击跳转</a></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">最美的相遇，总在不经意间走进心里；   </span><br><span class="line">最美的缘份，总能绽放出璀璨的徇丽；</span><br></pre></td></tr></table></figure>
+<p><strong> 博客浏览技巧 </strong><br>1.主页：按最后发贴/修改时间排序贴子<br>2.归档：按顺序显示我发贴时间<br>3.分类：可快速根据分类找到相关类资源，例如：安卓应用<br>4.标签：根据帖子关键词标签寻找你中意的贴子<br>5.搜索功能：最快速过来搜索贴子！</p>
+<p><strong> 声明 </strong><br>1.关于个人博客使用图片来自网络(百度、酷安酷图等等)，如有侵权请及时联系我处理！<br>2.关于分享APP资源，原作者可以联系我附上个人链接！如果觉得我的分享对您会造成不良影响，可联系我删除！</p>
+           
+            
         
         
     </div>
